@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0f7fa, #d1c4e9);
+    animation: backgroundPulse 10s infinite alternate
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 95%;
+    max-width: 520px
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #333;
+    text-shadow: 1px 1px #ccc
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 15px 0 20px;
+    flex-wrap: wrap
+}
+
+.info-box {
+    background: #f1f8e9;
+    padding: 10px;
+    flex: 1;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #2e7d32;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px
+}
+
+input {
+    width: 70px;
+    height: 70px;
+    font-size: 26px;
+    text-align: center;
+    border: none;
+    background: #e8f0fe;
+    border-radius: 10px;
+    transition: .3s
+}
+
+input:focus {
+    outline: none;
+    transform: scale(1.05);
+    border: 2px solid #4285f4
+}
+
+input.prefilled {
+    background: #cfd8dc;
+    font-weight: bold;
+    pointer-events: none
+}
+
+input.wrong {
+    background: #ffebee;
+    animation: shake .3s ease
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s ease;
+    min-width: 100px
+}
+
+button:hover {
+    opacity: .9
+}
+
+#checkBtn {
+    background-color: #4CAF50;
+    color: white
+}
+
+#resetBtn {
+    background-color: #f39c12;
+    color: white
+}
+
+#hintBtn {
+    background-color: #1976d2;
+    color: white
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0)
+    }
+
+    25% {
+        transform: translateX(-5px)
+    }
+
+    50% {
+        transform: translateX(5px)
+    }
+
+    75% {
+        transform: translateX(-5px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes backgroundPulse {
+    0% {
+        background: linear-gradient(135deg, #e0f7fa, #d1c4e9)
+    }
+
+    100% {
+        background: linear-gradient(135deg, #ffe0b2, #f8bbd0)
+    }
+}
+
+@media(max-width:500px) {
+    #grid-container {
+        grid-template-columns: repeat(4, 60px)
+    }
+
+    input {
+        width: 60px;
+        height: 60px;
+        font-size: 22px
+    }
+
+    .info-box {
+        font-size: 15px
+    }
+}
