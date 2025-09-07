@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>🧠 Grid Puzzle Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🧠 4x4 Logic Puzzle Game</h1>
+
+        <div class="info-row">
+            <div class="info-box" id="timer">⏱️ Time Left: 60s</div>
+            <div class="info-box" id="bestTime">🏆 Best Time: --</div>
+            <div class="info-box">
+                🎯 Difficulty:
+                <select id="level">
+                    <option value="easy">Easy</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="info-box">
+                ⏱️ Set Time:
+                <input type="number" id="timeInput" min="10" max="300" value="60" style="width:60px;"> s
+            </div>
+        </div>
+
+        <div id="grid-container"></div>
+
+        <div class="btn-group">
+            <button id="checkBtn">✅ Check Puzzle</button>
+            <button id="resetBtn">🔄 Reset</button>
+            <button id="hintBtn">💡 Hint (<span id="hintsLeft">3</span>)</button>
+        </div>
+
+    </div>
+
+    <audio id="successSound" src="success.mp3"></audio>
+    <audio id="errorSound" src="error.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
